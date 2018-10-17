@@ -2,26 +2,25 @@
 // Licensed under the MIT License. See License.txt in the project root for license information.
 namespace Microsoft.Azure.Management.Compute.Fluent
 {
+    using Microsoft.Azure.Management.Graph.RBAC.Fluent;
+    using Microsoft.Azure.Management.Msi.Fluent;
+    using Models;
     using Network.Fluent;
     using ResourceManager.Fluent;
     using ResourceManager.Fluent.Core;
     using ResourceManager.Fluent.Core.ResourceActions;
     using Storage.Fluent;
-    using Models;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using System.Text.RegularExpressions;
+    using System.Threading;
     using System.Threading.Tasks;
     using VirtualMachineScaleSet.DefinitionManaged;
     using VirtualMachineScaleSet.DefinitionManagedOrUnmanaged;
     using VirtualMachineScaleSet.DefinitionUnmanaged;
     using VirtualMachineScaleSet.Update;
-    using System.Threading;
-    using Microsoft.Azure.Management.Graph.RBAC.Fluent;
-    using Microsoft.Azure.Management.ResourceManager.Fluent.Core;
-    using Microsoft.Azure.Management.Msi.Fluent;
 
     /// <summary>
     /// Implementation of VirtualMachineScaleSet.
@@ -1608,6 +1607,12 @@ namespace Microsoft.Azure.Management.Compute.Fluent
             return this;
         }
 
+        ///GENMHASH:C1CAA1ACCAE5C80BBC73F38DBB8A24DB:A5BEB46443374AE5FC100EE84133951F
+        public VirtualMachineScaleSetImpl WithWindowsGalleryImageVersion(string galleryImageVersionId)
+        {
+            return this.WithWindowsCustomImage(galleryImageVersionId);
+        }
+
         ///GENMHASH:90924DCFADE551C6E90B738982E6C2F7:8E8BCFD08143E85B586E9D48D32AF4E0
         public VirtualMachineScaleSetImpl WithOSDiskStorageAccountType(StorageAccountTypes accountType)
         {
@@ -1675,6 +1680,12 @@ namespace Microsoft.Azure.Management.Compute.Fluent
                 .OsProfile.LinuxConfiguration = new LinuxConfiguration();
             this.isMarketplaceLinuxImage = true;
             return this;
+        }
+
+        ///GENMHASH:2B8B909D235B7D7AC3C105F6B606E684:7BC43BF2B183D2EF2284A56184ECD541
+        public VirtualMachineScaleSetImpl WithLinuxGalleryImageVersion(string galleryImageVersionId)
+        {
+            return this.WithLinuxCustomImage(galleryImageVersionId);
         }
 
         ///GENMHASH:2582ED197AB392F5EC837F6BC8FE2FF0:29B4432F98CD641D0280C31D00CAFB2D

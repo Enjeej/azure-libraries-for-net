@@ -37,10 +37,12 @@ namespace Fluent.Tests
                                 .WithImage("tomcat")
                                 .WithExternalTcpPort(8080)
                                 .WithCpuCoreCount(1)
+                                .WithEnvironmentVariable("ENV1", "value1")
                                 .Attach()
                             .DefineContainerInstance("nginx")
                                 .WithImage("nginx")
                                 .WithExternalTcpPort(80)
+                                .WithEnvironmentVariableWithSecuredValue("ENV2", "securedValue1")
                                 .Attach()
                             .WithRestartPolicy(ContainerGroupRestartPolicy.Never)
                             .WithDnsPrefix(cgName)
@@ -97,7 +99,7 @@ namespace Fluent.Tests
                     containerGroup.Refresh();
 
                     var containerOperationsList = containerInstanceManager.ContainerGroups.ListOperations();
-                    Assert.Equal(7, containerOperationsList.Count());
+                    Assert.Equal(10, containerOperationsList.Count());
 
                     containerGroup.Update()
                         .WithoutTag("tag1")

@@ -3,7 +3,7 @@
     "dir": "AppService",
     "source": "specification/web/resource-manager/readme.md",
     "package": "Microsoft.Azure.Management.AppService.Fluent",
-    "args": "--payload-flattening-threshold=1 --tag=package-2016-09"
+    "args": "--payload-flattening-threshold=1 --tag=package-2018-02"
   },
   "authorization": {
     "dir": "Graph.RBAC",
@@ -21,7 +21,7 @@
     "dir": "BatchAI",
     "source": "specification/batchai/resource-manager/readme.md",
     "package": "Microsoft.Azure.Management.BatchAI.Fluent",
-    "args": "--payload-flattening-threshold=1 --tag=package-2018-03"
+    "args": "--payload-flattening-threshold=1 --tag=package-2018-05"
   },
   "cdn": {
     "dir": "Cdn",
@@ -39,7 +39,7 @@
     "dir": "ContainerInstance",
     "source": "specification/containerinstance/resource-manager/readme.md",
     "package": "Microsoft.Azure.Management.ContainerInstance.Fluent",
-    "args": "--payload-flattening-threshold=1 --tag=package-2018-04"
+    "args": "--payload-flattening-threshold=1 --tag=package-2018-06"
   },
   "containerregistry": {
     "dir": "ContainerRegistry",
@@ -51,7 +51,7 @@
     "dir": "ContainerService",
     "source": "specification/containerservices/resource-manager/readme.md",
     "package": "Microsoft.Azure.Management.ContainerService.Fluent",
-    "args": "--payload-flattening-threshold=1 --tag=package-2017-09 --title=ContainerServiceManagementClient --description=\"Container Service Client\""
+    "args": "--payload-flattening-threshold=1 --tag=package-2018-03 --title=ContainerServiceManagementClient --description=\"Container Service Client\""
   },
   "cosmosdb": {
     "dir": "CosmosDB",
@@ -99,7 +99,7 @@
     "dir": "Monitor",
     "source": "specification/monitor/resource-manager/readme.md",
     "package": "Microsoft.Azure.Management.Monitor.Fluent",
-    "args": "--payload-flattening-threshold=1 --tag=package-2018-03"
+    "args": "--payload-flattening-threshold=1 --tag=package-2018-03 --add-inner=AutoscaleProfile,ScaleRule"
   },
   "network": {
     "dir": "Network",

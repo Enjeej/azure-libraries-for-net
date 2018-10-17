@@ -461,9 +461,7 @@ namespace Microsoft.Azure.Management.Compute.Fluent
         /// in the scale set.
         /// A primary internal load balancer associated with the primary network interfaces of the scale set
         /// virtual machine will be also belong to this network
-        /// </p>.
         /// </return>
-        /// <throws>IOException the IO exception.</throws>
         Microsoft.Azure.Management.Network.Fluent.INetwork Microsoft.Azure.Management.Compute.Fluent.IVirtualMachineScaleSet.GetPrimaryNetwork()
         {
             return this.GetPrimaryNetwork();
@@ -1194,6 +1192,16 @@ namespace Microsoft.Azure.Management.Compute.Fluent
         VirtualMachineScaleSet.Definition.IWithLinuxRootUsernameManaged VirtualMachineScaleSet.Definition.IWithOS.WithLinuxCustomImage(string customImageId)
         {
             return this.WithLinuxCustomImage(customImageId);
+        }
+
+        /// <summary>
+        /// Specifies the resource ID of a Linux gallery image version to be used as the virtual machine scaleset OS.
+        /// </summary>
+        /// <param name="galleryImageVersionId">The resource ID of a gallery image version.</param>
+        /// <return>The next stage of the definition.</return>
+        VirtualMachineScaleSet.Definition.IWithLinuxRootUsernameManaged VirtualMachineScaleSet.Definition.IWithOSBeta.WithLinuxGalleryImageVersion(string galleryImageVersionId)
+        {
+            return this.WithLinuxGalleryImageVersion(galleryImageVersionId);
         }
 
         /// <summary>
@@ -2268,6 +2276,16 @@ namespace Microsoft.Azure.Management.Compute.Fluent
         VirtualMachineScaleSet.Definition.IWithWindowsAdminUsernameManaged VirtualMachineScaleSet.Definition.IWithOS.WithWindowsCustomImage(string customImageId)
         {
             return this.WithWindowsCustomImage(customImageId);
+        }
+
+        /// <summary>
+        /// Specifies the resource ID of a Windows gallery image version to be used as the virtual machine scaleset OS.
+        /// </summary>
+        /// <param name="galleryImageVersionId">The resource ID of the gallery image version.</param>
+        /// <return>The next stage of the definition.</return>
+        VirtualMachineScaleSet.Definition.IWithWindowsAdminUsernameManaged VirtualMachineScaleSet.Definition.IWithOSBeta.WithWindowsGalleryImageVersion(string galleryImageVersionId)
+        {
+            return this.WithWindowsGalleryImageVersion(galleryImageVersionId);
         }
 
         /// <summary>
